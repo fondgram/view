@@ -12,7 +12,9 @@
 @media screen and (max-width: 678px){
     .home main {
         padding: 0 5px;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr
+        display: flex;
+        flex-wrap: wrap;
+        /* grid-template-columns: 1fr;
+        grid-template-rows: 1fr 8fr 1fr */
     }
 }

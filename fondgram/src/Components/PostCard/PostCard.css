@@ -1,8 +1,78 @@
 .post__card {
-    max-width: 550px;
-    height: 500px;
+    width: 550px;
+    height: 505px;
     background-color: #333;
     margin: 15px;
     padding: 12px;
     border-radius: 15px;
+}
+
+
+.post__card .upper__part {
+    display: grid;
+    grid-template-columns: 1.7fr 8fr 1fr;
+}
+
+.post__card .upper__part .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post__card .upper__part .full__name {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #bbb
+}
+
+.post__card .upper__part .location {
+    margin: 0;
+    font-size: 15px;
+    color: #00D5FA
+}
+
+.post__card .bottom__part .post__image {
+    width: 100%;
+    min-width: 300px;
+    border-radius: 15px;
+    height: 90%;
+    min-height: 350px;
+}
+
+.post__card .bottom__part .description {
+    font-size: 15px;
+    color: #E6FBFF;
+    margin: 4px;
+    margin-top: 10px;
+}
+
+.post__card .bottom__part>div {
+    display: flex;
+    gap: 20px;
+
+}
+
+.post__card .bottom__part .likes,
+.post__card .bottom__part .comments {
+    display: flex;
+    color: #ddd;
+    font-size: 18px;
+    font-weight: 700;
+    align-items: center;
+}
+
+
+.post__card .bottom__part .icon:hover {
+    border-radius: 10px;
+    background-color: #484848;
+
+}
+
+@media screen and (max-width:678px) {
+    .post__card {
+        width: 90%;
+        min-width: 300px;
+        height: 480px;
+    }
 }
