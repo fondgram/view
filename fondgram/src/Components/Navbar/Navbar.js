@@ -16,7 +16,7 @@ import { IconButton } from '@mui/material';
 const Navbar = () => {
     return (
         <header>
-            <nav>
+            <nav className='light'>
                 <div>
                     <h1 className='logo'>Fondgram</h1>
                     <input type="text" className='search' name='search' placeholder='Search...' />

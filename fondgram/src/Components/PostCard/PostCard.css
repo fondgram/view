@@ -1,0 +1,8 @@
+.post__card {
+    max-width: 550px;
+    height: 500px;
+    background-color: #333;
+    margin: 15px;
+    padding: 12px;
+    border-radius: 15px;
+}

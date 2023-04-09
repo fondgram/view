@@ -19,3 +19,10 @@ code {
   border-radius: 50%;
   margin: 2px;
 }
+
+@media screen and (max-width: 678px) {
+  .profile__image {
+    width: 50px;
+    height: 50px;
+  }
+}
