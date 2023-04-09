@@ -1,0 +1,30 @@
+.add__post {
+    background-color: #252525;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 600px;
+}
+.add__post .upper_part {
+    display: flex;
+    align-items: center;
+}
+
+.add__post .upper_part .whats__on__your__mind{
+    width: 70%;
+    margin: 0 auto;
+    height: 35px;
+    padding: 12px;
+    font-size: 19px;
+    border: none;
+    border-radius: 30px;
+    background-color: #353535;
+    color: white;
+}
+
+.add__post__image {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+}

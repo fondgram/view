@@ -1,0 +1,51 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    background-color: #171717;
+}
+
+nav .logo {
+    color: #3DA1F5;
+    font-size: 30px;
+    margin: 0 30px 0 0;
+}
+nav .logo:hover{
+    color: #3D77a2;
+    cursor: pointer;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+}
+nav .search {
+    width: 230px;
+    height: 35px;
+    padding: 0 7px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px 0 0 10px;
+    background-color: #484848;
+    color: white;
+}
+
+nav .search__button {
+    height: 39px;
+    padding: 5px;
+    margin-top: 3px;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    background-color: #484848;
+    color: white
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    color: white;
+}
+
+nav ul li {
+    padding: 10px;
+}
