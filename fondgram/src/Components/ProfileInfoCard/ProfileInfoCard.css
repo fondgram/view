@@ -2,19 +2,28 @@
     background-color: #353535;
     width: 320px;
     max-height: 555px;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 12px;
     margin: 30px 30px 15px 15px;
-    color: #999;
+    color: #a5a5a5;
 }
-.profile__info__card .upper__part{
+
+.profile__info__card.light__mode {
+    color: #555;
+}
+
+.profile__info__card.light__mode {
+    background-color: white;
+}
+
+.profile__info__card .upper__part {
     display: grid;
     grid-template-columns: 3fr 7.5fr 1.5fr;
 }
 
 .profile__info__card .info {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .profile__info__card .full__name {
@@ -22,7 +31,12 @@
     margin-top: 10px;
     font-size: 18px;
     font-weight: 700;
-    color: #bbb 
+    color: #ccc
+}
+
+
+.profile__info__card .full__name.light__mode {
+    color: #333
 }
 
 .profile__info__card .nr__friends {
@@ -36,51 +50,66 @@
     display: flex;
     flex-direction: column;
 }
-.profile__info__card .location__info{
+
+.profile__info__card .location__info {
     display: flex;
-    align-items: center ;
+    align-items: center;
     font-size: 15px;
 }
+
 .profile__info__card .location {
-    margin: 7px 
+    margin: 7px
 }
 
 .profile__info__card .age {
-    margin: 7px 
+    margin: 7px
 }
 
 .profile__info__card .views__part .views {
     display: grid;
     grid-template-columns: 10.5fr 1.5fr;
-    
+
 }
+
 .profile__info__card .views__part .views p {
     margin: 10px 1px;
-    
+
 }
 
 .profile__info__card .nr__views {
     font-weight: 700;
     color: #bbb
 }
+
+
+.profile__info__card .nr__views.light__mode {
+    font-weight: 700;
+    color: #555
+}
 .profile__info__card .nr__impressions {
     font-weight: 700;
     color: #bbb
 }
 
+.profile__info__card .nr__impressions.light__mode {
+    color: #555
+}
 
-.profile__info__card .profiles__part .profiles  {
+
+
+.profile__info__card .profiles__part .profiles {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+
 .profile__info__card .profiles__part .profiles div {
     display: grid;
     grid-template-columns: 2fr 9fr 1fr;
     margin-bottom: 10px;
-}   
+}
 
-.profile__info__card .profiles__part .profiles div div  {
+.profile__info__card .profiles__part .profiles div div {
     display: flex;
     flex-direction: column;
 }
@@ -92,4 +121,8 @@
 .profile__info__card .profiles__part .profiles div p:nth-child(1) {
     color: #bbb;
     font-weight: 700;
+}
+
+.profile__info__card .profiles__part .profiles div p:nth-child(1).light__mode {
+    color: #333;
 }

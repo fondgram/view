@@ -4,13 +4,18 @@
     background-color: #333;
     margin: 15px;
     padding: 12px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
+
+.post__card.light__mode {
+    background-color: white;
+}
+
 
 
 .post__card .upper__part {
     display: grid;
-    grid-template-columns: 1.7fr 8fr 1fr;
+    grid-template-columns: 1.5fr 8fr 1fr;
 }
 
 .post__card .upper__part .info {
@@ -23,28 +28,40 @@
     margin-top: 10px;
     font-size: 18px;
     font-weight: 700;
-    color: #bbb
+    color: #ccc;
+}
+
+.post__card .upper__part .full__name.light__mode {
+    color: #222
 }
 
 .post__card .upper__part .location {
     margin: 0;
     font-size: 15px;
-    color: #00D5FA
+    color: #00D5FA;
 }
 
+
+.post__card .upper__part .location.light__mode {
+    color: #777;
+}
 .post__card .bottom__part .post__image {
     width: 100%;
     min-width: 300px;
-    border-radius: 15px;
+    border-radius: 10px;
     height: 90%;
     min-height: 350px;
 }
 
 .post__card .bottom__part .description {
     font-size: 15px;
-    color: #E6FBFF;
+    color: #ccc;
     margin: 4px;
     margin-top: 10px;
+}
+
+.post__card .bottom__part .description.light__mode {
+    color: #444;
 }
 
 .post__card .bottom__part>div {
@@ -63,10 +80,20 @@
 }
 
 
+.post__card .bottom__part .likes,
+.post__card .bottom__part .comments {
+    color: #888;
+}
+
+
 .post__card .bottom__part .icon:hover {
     border-radius: 10px;
     background-color: #484848;
 
+}
+
+.post__card .bottom__part .icon:hover {
+    background-color: #888;
 }
 
 @media screen and (max-width:678px) {

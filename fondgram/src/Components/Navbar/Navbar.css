@@ -6,14 +6,17 @@ nav {
     max-width: 100%;
 }
 
-
+nav.light__mode {
+    background-color: white;
+}
 nav .logo {
-    color: #66E6FC;
+    color: #33DDFB;
     font-size: 30px;
     margin: 15px;
-    margin-right: 30px;
+    margin-right: 43px;
 }
-nav .logo:hover{
+
+nav .logo:hover {
     color: #3D77a2;
     cursor: pointer;
 }
@@ -26,24 +29,34 @@ nav div {
 nav .search {
     width: 230px;
     height: 35px;
-    padding: 0 7px;
+    padding: 5px 7px;
     font-size: 16px;
     font-weight: 700;
     border-radius: 10px 0 0 10px;
     background-color: #484848;
+    border: none; 
     color: white;
 }
 
-nav .search__button {
-    height: 39px;
-    padding: 5px;
-    border-radius: 0 10px 10px 0;
-    margin-top: 2px;
-    cursor: pointer;
-    background-color: #484848;
-    color: white
+
+nav .search.light__mode{
+    background-color: #E0E0E0;
+    color: #222;
 }
 
+nav .search__button {
+    height: 45px;
+    padding: 5px;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    background-color: #484848;
+    border: none; 
+    color: white;
+}
+
+nav .search__button.light__mode {
+    background-color: #E0E0E0;
+}
 nav ul {
     display: flex;
     list-style-type: none;
@@ -51,13 +64,14 @@ nav ul {
 }
 
 nav ul li {
-    padding: 11px;
+    padding: 11px 20px;
 }
 
-@media screen and (max-width: 678px){
+@media screen and (max-width: 678px) {
     nav {
         padding: 0 5px;
     }
+
     nav .logo {
         font-size: 22px;
     }

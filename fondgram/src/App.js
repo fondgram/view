@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from "./Pages/Home/Home"
+import React, { useState } from 'react';
+import { AppContext } from './AppContext';
+
 // import SignIn from "./pages/SignIn/Signin"
 // import SignUp from "./pages/SignUp/Signup"
 // import About from './pages/About/About'
@@ -15,11 +18,13 @@ import Home from "./Pages/Home/Home"
 // import './App.css';
 
 function App() {
+  const [lightMode, setLightMode] = useState(false);
   return (
-    <Router>
-    <Routes>
-      <Route path="/" element={<Home />} exact/>
-      {/* <Route path="/about" element={<About />} exact />
+    <AppContext.Provider value={{ lightMode, setLightMode }}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} exact />
+          {/* <Route path="/about" element={<About />} exact />
       <Route path="/fundraisers" element={<Fundraisers />} exact />
       <Route path="/sign_in" element={<SignIn />} exact />
       <Route path="/sign_up" element={<SignUp />} exact />
@@ -31,8 +36,9 @@ function App() {
       <Route path="/contact" element={<Contact />} exact></Route>
       <Route path="/fundraiser" element={<Fundraiser />} exact></Route>
       <Route path="/admin" element={<Admin />} exact></Route> */}
-    </Routes>
-  </Router>
+        </Routes>
+      </Router>
+    </AppContext.Provider>
   );
 }
 

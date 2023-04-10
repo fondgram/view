@@ -2,6 +2,10 @@
     background-color: #111;
 }
 
+.home.light__mode {
+    background-color: #eee;
+}
+
 .home main {
     display: grid;
     grid-template-columns: 2fr 6fr 4fr;
