@@ -5,7 +5,9 @@ import ProfileInfoCard from '../../Components/ProfileInfoCard/ProfileInfoCard'
 import PostCard from '../../Components/PostCard/PostCard'
 import Recommended from '../../Components/Recommended/Recommended'
 import { AppContext } from '../../AppContext'
+import FriendsList from '../../Components/FriendsList/FriendsList'
 import "./Home.css"
+
 
 const Home = () => {
   const { lightMode, setLightMode } = useContext(AppContext);
@@ -13,7 +15,10 @@ const Home = () => {
     <div className={'home' + (lightMode ? " light__mode" : "")}>
       <Navbar />
       <main>
-        <ProfileInfoCard />
+        <div>
+          <ProfileInfoCard />
+          <FriendsList />
+        </div>
         <div>
           <AddPost />
           <PostCard />

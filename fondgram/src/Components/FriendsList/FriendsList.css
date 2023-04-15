@@ -1,0 +1,22 @@
+.friends__list {
+    width: 320px;
+    background-color: #353535;
+    border-radius: 15px;
+    padding: 12px;
+    color: white;
+    margin: 30px 30px 15px 15px;
+
+}
+
+.friends__list.light__mode{
+    background-color: white;
+    color: #353535;
+}
+
+.friends__list .title {
+    margin: 0;
+    padding-left: 5px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}

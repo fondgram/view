@@ -1,0 +1,31 @@
+.profile__row {
+    display: grid;
+    grid-template-columns: 2fr 9fr 1fr;
+    color: #ccc;
+    margin: 7px 0;
+}
+
+.profile__row.light__mode{
+    color: #333
+}
+.profile__row .info {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__row .full__name {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.profile__row .full__name:hover {
+    color: aqua;
+    cursor: pointer;
+}
+.profile__row .nr__friends {
+    margin: 0;
+    margin: 0;
+    font-size: 15px;
+}
