@@ -12,7 +12,7 @@ import {
 } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import { AppContext } from '../../AppContext';
-
+import Dropdown from './Dropdown';
 
 
 const Navbar = () => {
@@ -41,7 +41,6 @@ const Navbar = () => {
                     </li>
                     <li>
                         <Message sx={{ color: lightMode ? 'black' : ''}} />
-                        <Close sx={{ color: lightMode ? 'black' : ''}}/>
                         <Menu sx={{ color: lightMode ? 'black' : ''}}/>
                     </li>
                     <li>

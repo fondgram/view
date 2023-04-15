@@ -1,5 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from "./Pages/Home/Home"
+import About from './Pages/About/About';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
+import Oops from './Pages/Oops/Oops';
 import React, { useState } from 'react';
 import { AppContext } from './AppContext';
 
@@ -24,8 +28,13 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} exact />
-          {/* <Route path="/about" element={<About />} exact />
-      <Route path="/fundraisers" element={<Fundraisers />} exact />
+          <Route path="/about" element={<About />} exact />
+          <Route path="/login" element={<Login />} exact />
+          <Route path="/login" element={<Login />} exact />
+          <Route path="/register" element={<Register />} exact />
+          <Route path="*" element={<Oops />}  />
+          
+      {/*<Route path="/fundraisers" element={<Fundraisers />} exact />
       <Route path="/sign_in" element={<SignIn />} exact />
       <Route path="/sign_up" element={<SignUp />} exact />
       <Route path="/search" element={<Search />} exact />
