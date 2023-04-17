@@ -8,7 +8,7 @@ const Recommended = () => {
     console.log("created add")
   }
   return (
-    <aside className={'recommended' + (lightMode ? " light__mode" : "")}>
+    <aside className={'recommended hide__xs hide__md' + (lightMode ? " light__mode" : "")}>
       <div className='upper__part'>
         <p className={'sponsored' + (lightMode ? " light__mode" : "")}>Sponsored</p>
         <button className={'create__ad' + (lightMode ? " light__mode" : "")} type='button' onClick={handleCreateAdd} name='createAd'>Create Ad</button> {/* TODO: Show this button only to admins */}

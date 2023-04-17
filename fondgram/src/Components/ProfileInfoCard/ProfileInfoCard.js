@@ -16,7 +16,7 @@ const ProfileInfoCard = () => {
     console.log("asdfsd")
   }
   return (
-    <div className={'profile__info__card' + (lightMode ? " light__mode" : "")}>
+    <div className={'profile__info__card hide__xs' + (lightMode ? " light__mode" : "")}>
       <div className='upper__part'>
         <img className='profile__image' src={require("./assets/profileSample.jpg")} alt='profile__image' />
         <div className='info'>

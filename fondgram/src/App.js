@@ -5,21 +5,11 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Oops from './Pages/Oops/Oops';
 import React, { useState } from 'react';
+import Analytics from './Admin/Analytics/Analytics';
+import Settings from './Admin/Settings/Settings';
+import Reports from './Admin/Reports/Reports';
 import { AppContext } from './AppContext';
-
-// import SignIn from "./pages/SignIn/Signin"
-// import SignUp from "./pages/SignUp/Signup"
-// import About from './pages/About/About'
-// import Search from './pages/Search/Search'
-// import NewFundraiser from './pages/NewFundraiser/NewFundraiser'
-// import Welcome from './pages/Welcome/Welcome'
-// import Fundraisers from './pages/Fundraisers/Fundraisers'
-// import Donate from './pages/Donate/Donate'
-// import User from './pages/User/User'
-// import Contact from './pages/Contact/Contact'
-// import Fundraiser from './pages/Fundraiser/Fundraiser'
-// import Admin from './pages/Admin/Admin'
-// import './App.css';
+import SimpleDashboards from './Admin/SimpleDashboards/SimpleDashboards';
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
@@ -32,7 +22,12 @@ function App() {
           <Route path="/login" element={<Login />} exact />
           <Route path="/login" element={<Login />} exact />
           <Route path="/register" element={<Register />} exact />
+          <Route path="/register" element={<Register />} exact />
           <Route path="*" element={<Oops />}  />
+          <Route path="/admin/settings" element={<Settings />} exact />
+          <Route path="/admin/reports/" element={<Reports />} exact />
+          <Route path="/admin/analytics" element={<Analytics />} exact />
+          <Route path="/admin/simpledashboards" element={<SimpleDashboards />} exact />
           
       {/*<Route path="/fundraisers" element={<Fundraisers />} exact />
       <Route path="/sign_in" element={<SignIn />} exact />

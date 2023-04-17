@@ -1,27 +1,43 @@
-import React, { useContext, useState } from 'react';
-import { AppContext } from '../../AppContext';
+import React, { useState, useContext } from "react";
+import { AppContext } from "../../AppContext";
+import "./Dropdown.css";
 
 const Dropdown = () => {
-  const { currentUser, setCurrentUser } = useContext(AppContext);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { lightMode } = useContext(AppContext);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleLogout = () => {
-    // Perform logout logic here, such as clearing user data from local storage
-    setCurrentUser(null);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleItemClick = () => {
+    setIsOpen(false);
   };
 
   return (
-    <div className="dropdown">
-      <div className="dropdown-toggle" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-        {currentUser ? currentUser.fullName : ''}
-        <span className="caret"></span>
-      </div>
-      {isDropdownOpen && (
-        <div className="dropdown-menu">
-          <div className="dropdown-item" onClick={handleLogout}>
-            Log out
-          </div>
+    <div className="dropdown-container">
+      <div className={"dropdown-header" + (lightMode ? " light__mode" : "")} onClick={toggleDropdown}>
+        <div className="dropdown-header-title">
+          <span>Jeton Sllamniku</span>
         </div>
+        <span
+          className={`dropdown-header-icon ${
+            isOpen ? "open" : ""
+          }`}
+        ></span>
+      </div>
+      {isOpen && (
+        <ul className="dropdown-menu">
+          <li className="dropdown-item" onClick={handleItemClick}>
+            <span>Profile</span>
+          </li>
+          <li className="dropdown-item" onClick={handleItemClick}>
+            <span>Settings</span>
+          </li>
+          <li className="dropdown-item" onClick={handleItemClick}>
+            <span>Log Out</span>
+          </li>
+        </ul>
       )}
     </div>
   );

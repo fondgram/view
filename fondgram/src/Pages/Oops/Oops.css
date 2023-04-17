@@ -10,7 +10,7 @@
 }
 
 .oops-title {
-    font-size: 55px;
+    font-size: 50px;
     font-weight: bold;
     color: #001519;
     text-shadow: 2px 2px #fff;
@@ -27,7 +27,7 @@
 }
 
 .oops-text {
-    font-size: 22px;
+    font-size: 20px;
     color: black;
     font-weight: 700;
     margin-bottom: 30px;
@@ -51,7 +51,7 @@
 
 
 .oops-container .website {
-    font-size: 55px;
+    font-size: 52px;
     font-weight: bold;
     color: #006B7D;
     margin: 0;

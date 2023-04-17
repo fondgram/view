@@ -5,7 +5,7 @@ import "./FriendsList.css"
 const FriendsList = () => {
   const { lightMode, setLightMode } = useContext(AppContext);
   return (
-    <div className={'friends__list' + (lightMode ? " light__mode" : "")}>
+    <div className={'friends__list hide__xs ' + (lightMode ? " light__mode" : "")}>
       <p className='title'>Friend List</p>
       <ProfileRow/>
       <ProfileRow/>

@@ -91,3 +91,17 @@
 .add__post .add__post__submit .text {
     margin: 0 auto;
 }
+
+@media screen and (max-width: 1020px){
+    .add__post {
+        width: 95%;
+        max-height: 480px;
+    }
+}
+@media screen and (max-width:678px) {
+    .add__post {
+        margin: 15px auto;
+        width: 90%;
+        min-width: 270px;
+    }
+}

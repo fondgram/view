@@ -127,3 +127,10 @@
     color: #333;
 }
 
+
+
+@media screen and (max-width: 1020px){
+    .profile__info__card {
+        width: 300px;
+    }
+}

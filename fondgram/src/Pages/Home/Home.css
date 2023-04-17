@@ -13,12 +13,17 @@
 }
 
 
-@media screen and (max-width: 678px){
+@media screen and (max-width: 1020px) {
+    .hide__md {
+        display: none;
+    }
+}
+@media screen and (max-width: 778px){
     .home main {
-        padding: 0 5px;
         display: flex;
         flex-wrap: wrap;
-        /* grid-template-columns: 1fr;
-        grid-template-rows: 1fr 8fr 1fr */
+    }
+    .hide__xs {
+        display: none;
     }
 }
