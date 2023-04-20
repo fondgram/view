@@ -1,19 +1,36 @@
 import React, { useState } from 'react'
 import "./Register.css"
+import { Variables } from "../../Variables"
+
 import axios from 'axios';
 
 const Register = () => {
-  const [username, setUsername] = useState('');
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
+  const [birthDate, setBirthDate] = useState('');
+  const [address, setAddress] = useState('');
+  const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
 
   const handleRegister = async (event) => {
+    if (email !== confirmEmail){
+      console.log("email and confirm email are not the same");
+      //todo - make dynamic
+    }
     event.preventDefault();
 
     try {
-      const response = await axios.post('/UserRegistration/login', {
+      const response = await axios.post(Variables.API_URL + 'UserRegistration/register', {
+        firstName: firstName,
+        lastName: lastName,
+        dob: birthDate,
+        address: address,
         email: email,
+        userName: userName,
         password: password
       });
       const token = response.data.token;
@@ -34,15 +51,14 @@ const Register = () => {
           <img src={require("./assets/login.jpg")} alt="login" />
           <form onSubmit={handleRegister}>
             <h1>Register</h1>
-            <input type="text" name="firstName" id="firstName" placeholder="First Name" required />
-            <input type="text" name="lastName" id="lastName" placeholder="Last Name" required />
-            <label>
-              <input type="date" name="birthDate" id="birthDate" placeholder="Birthday" required />
-            </label>
-            <input type="text" name="address" id="address" placeholder="Address" required />
-            <input type="email" name="email" placeholder="Email" id="email" required />
-            <input type="email" name="confirmEmail" placeholder="Confirm Email" id="confirmEmail" required />
-            <input type="password" name="password" placeholder="Password" id="password" required />
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+            <input type="date" name="birthDate" id="birthDate" placeholder="Birthday" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} required />
+            <input type="text" name="address" id="address" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} required />
+            <input type="username" name="username" placeholder="UserName" id="username" value={userName} onChange={(e) => setUserName(e.target.value)} required />
+            <input type="email" name="email" placeholder="Email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input type="email" name="confirmEmail" placeholder="Confirm Email" id="confirmEmail" value={confirmEmail} onChange={(e) => setConfirmEmail(e.target.value)} required />
+            <input type="password" name="password" placeholder="Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             <button type="submit" className="register__button" id="submit" name="submit">Register</button>
             <p className="error"></p>
             <p>

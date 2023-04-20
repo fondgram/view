@@ -18,7 +18,7 @@ import { IconButton } from '@mui/material';
 
 
 const Navbar = () => {
-    const isAdmin = false;//Todo: make this dynamic
+    const isAdmin = true;//Todo: make this dynamic
     const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false)
     const { lightMode, setLightMode } = useContext(AppContext);
     const [menu, setMenu] = useState(true);

@@ -1,17 +1,19 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from "axios"
 import "./Login.css"
+import { Variables } from "../../Variables"
+
 
 const Login = () => {
-    const [username, setUsername] = useState('');
+    const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-
-    const handleLogin = async (email, password) => {
+    const handleLogin = async (event) => {
+        event.preventDefault()
 
         try {
-            const response = await axios.post('/UserRegistration/login', {
-                email: email,
+            const response = await axios.post(Variables.API_URL + 'UserRegistration/login', {
+                userName: userName,
                 password: password
             });
             const token = response.data.token;
@@ -30,8 +32,8 @@ const Login = () => {
                     <img src={require("./assets/login.jpg")} alt="login" />
                     <form onSubmit={handleLogin}>
                         <h1>Login</h1>
-                        <input type="email" name="email" placeholder="Email" id="email" required />
-                        <input type="password" name="password" placeholder="Password" id="password" required />
+                        <input type="username" name="username" placeholder="UserName" id="username" value={userName} onChange={(e) => setUsername(e.target.value)} required />
+                        <input type="password" name="password" placeholder="Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                         <button type="submit" className="login__button" name="submit" id="submit">Login</button>
                         <p className="error"></p>
                         <p>
