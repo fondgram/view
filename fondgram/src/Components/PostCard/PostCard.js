@@ -7,7 +7,7 @@ import { AppContext } from '../../AppContext';
 
 import "./PostCard.css"
 
-const PostCard = () => {
+const PostCard = ({props}) => {
   const { lightMode, setLightMode } = useContext(AppContext);
   const handleAddLike = () => {
     console.log("like added")
@@ -30,7 +30,7 @@ const PostCard = () => {
       </div>
       <div className='bottom__part'>
         <p className={'description' + (lightMode ? " light__mode" : "")}>SOme really lasdfsad description</p>
-        <img className='post__image' src={require("./assets/profileSample.jpg")} alt='profile__image' />
+        <img className='post__image' src={props.imageUrl} alt='profile__image' />
         <div>
           <div className='likes'>
             <FavoriteBorderIcon className='icon' onClick={handleAddLike} sx={{ fontSize: "32px", padding: '4px', color: '#33DDFB', cursor: 'pointer', margin: '4px' }} /> {/*Todo: set filled heart if liked, otherwise unfilled */}

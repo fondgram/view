@@ -1,6 +1,5 @@
 .post__card {
     width: 550px;
-    height: 505px;
     background-color: #333;
     margin: 15px;
     padding: 12px;
@@ -51,6 +50,7 @@
     border-radius: 10px;
     height: 90%;
     min-height: 330px;
+    max-height: 90%;
     object-fit: cover;
 }
 
@@ -100,14 +100,14 @@
 @media screen and (max-width: 1020px){
     .post__card {
         width: 95%;
-        max-height: 480px;
     }
 }
 @media screen and (max-width:678px) {
     .post__card {
-        margin: 0 auto;
+        margin: 15px auto;
         width: 90%;
         min-width: 270px;
-        height: 420px;
+        text-align: left;
     }
+
 }
