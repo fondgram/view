@@ -100,13 +100,16 @@
 @media screen and (max-width: 1020px){
     .post__card {
         width: 95%;
+        min-width: 300px;
+        margin: 9px;
+
     }
 }
 @media screen and (max-width:678px) {
     .post__card {
-        margin: 15px auto;
+        margin: 5px;
         width: 90%;
-        min-width: 270px;
+        min-width: 300px;
         text-align: left;
     }
 

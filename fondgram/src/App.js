@@ -9,7 +9,8 @@ import Analytics from './Admin/Analytics/Analytics';
 import Settings from './Admin/Settings/Settings';
 import Reports from './Admin/Reports/Reports';
 import { AppContext } from './AppContext';
-import SimpleDashboards from './Admin/SimpleDashboards/SimpleDashboards';
+import DbEntities from './Admin/DbEntities/DbEntities';
+import Dashboards from './Admin/Dashboards/Dashboards';
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
@@ -27,19 +28,8 @@ function App() {
           <Route path="/admin/settings" element={<Settings />} exact />
           <Route path="/admin/reports/" element={<Reports />} exact />
           <Route path="/admin/analytics" element={<Analytics />} exact />
-          <Route path="/admin/simpledashboards" element={<SimpleDashboards />} exact />
-          
-      {/*<Route path="/fundraisers" element={<Fundraisers />} exact />
-      <Route path="/sign_in" element={<SignIn />} exact />
-      <Route path="/sign_up" element={<SignUp />} exact />
-      <Route path="/search" element={<Search />} exact />
-      <Route path="/newfundraiser" element={<NewFundraiser/>} exact></Route>
-      <Route path="/welcome" element={<Welcome/>} exact></Route>
-      <Route path="/donate" element={<Donate/>} exact></Route>
-      <Route path="/user" element={<User />} exact></Route>
-      <Route path="/contact" element={<Contact />} exact></Route>
-      <Route path="/fundraiser" element={<Fundraiser />} exact></Route>
-      <Route path="/admin" element={<Admin />} exact></Route> */}
+          <Route path="/admin/dbentities" element={<DbEntities />} exact />
+          <Route path="/admin/dashboards" element={<Dashboards />} exact />
         </Routes>
       </Router>
     </AppContext.Provider>

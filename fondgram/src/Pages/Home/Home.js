@@ -37,10 +37,10 @@ const Home = () => {
         </div>
         <div>
           <AddPost />
-          {data.map(d => <PostCard props={d} id={d.} />)}
-          {/* <PostCard />
+          {data.map(d => <PostCard props={d} id={d.id} />)}
           <PostCard />
-          <PostCard /> */}
+          <PostCard />
+          <PostCard />
         </div>
         <Recommended />
       </main>

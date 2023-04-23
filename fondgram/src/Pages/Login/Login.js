@@ -32,7 +32,7 @@ const Login = () => {
                     <img src={require("./assets/login.jpg")} alt="login" />
                     <form onSubmit={handleLogin}>
                         <h1>Login</h1>
-                        <input type="username" name="username" placeholder="UserName" id="username" value={userName} onChange={(e) => setUsername(e.target.value)} required />
+                        <input type="username" name="username" placeholder="Username" id="username" value={userName} onChange={(e) => setUsername(e.target.value)} required />
                         <input type="password" name="password" placeholder="Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                         <button type="submit" className="login__button" name="submit" id="submit">Login</button>
                         <p className="error"></p>

@@ -23,6 +23,8 @@
 
 @media screen and (max-width: 1020px){
     .friends__list {
-        width: 300px;
+        width: 290px;
+        margin: 5px;
+        margin-top: 30px;
     }
 }

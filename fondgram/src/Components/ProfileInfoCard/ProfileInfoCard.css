@@ -131,6 +131,8 @@
 
 @media screen and (max-width: 1020px){
     .profile__info__card {
-        width: 300px;
+        width: 290px;
+        margin: 5px;
+        margin-top: 30px;
     }
 }

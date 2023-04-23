@@ -96,12 +96,17 @@
     .add__post {
         width: 95%;
         max-height: 480px;
+        margin: 9px;
+        margin-top: 30px;
+        min-width: 300px;
+
     }
 }
 @media screen and (max-width:678px) {
     .add__post {
-        margin: 15px auto;
         width: 90%;
-        min-width: 270px;
+        min-width: 300px;
+        margin: 5px;
+        margin-top: 30px;
     }
 }

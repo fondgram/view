@@ -13,7 +13,7 @@
 }
 
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1280px) {
     .hide__md {
         display: none;
     }
@@ -22,6 +22,7 @@
     .home main {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     .hide__xs {
         display: none;

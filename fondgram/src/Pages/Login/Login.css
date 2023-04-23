@@ -85,8 +85,7 @@
         margin: auto;
     }
 
-    body {
+    .login body {
         text-align: center;
-        padding: 70px 0;
     }
 }
