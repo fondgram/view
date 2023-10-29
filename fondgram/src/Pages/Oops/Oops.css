@@ -4,12 +4,12 @@
     justify-content: center;
     align-items: center;
     min-height: 93vh;
-    background-color: #f9f9f9;
+    background-color: lightblue;
     text-align: center;
     padding-bottom: 40px;
 }
 
-.oops-title {
+.oops-container .oops-title {
     font-size: 50px;
     font-weight: bold;
     color: #001519;
@@ -18,22 +18,25 @@
     margin-bottom: 15px;
 }
 
-.oops-image {
+.oops-container .oops-image {
     width: 350px;
     height: 350px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
     margin-bottom: 2rem;
 }
 
-.oops-text {
+
+.oops-container .oops-text {
     font-size: 20px;
     color: black;
     font-weight: 700;
     margin-bottom: 30px;
 }
 
-.oops-link {
+
+.oops-container .oops-link {
     display: inline-block;
     padding: 11px 30px;
     border-radius: 5px;
@@ -45,12 +48,13 @@
     transition: background-color 0.2s ease-in-out;
 }
 
-.oops-link:hover {
+
+.oops-container .oops-link:hover {
     background-color: #006B7D;
 }
 
 
-.oops-container .website {
+.oops-container .oops-container .website {
     font-size: 52px;
     font-weight: bold;
     color: #006B7D;

@@ -9,12 +9,13 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StorageIcon from '@mui/icons-material/Storage';
+import { Link } from 'react-router-dom';
 
 const SideNav = () => {
 
     return (
         <div className="sidebar">
-            <h1>Fondgram</h1>
+            <Link to="/" style={{ textDecoration: 'none', color:'inherit' }}><h1>Fondgram</h1></Link>
             <ul>
                 <li>
                     <NavLink to="/admin/dashboards" className={({ isActive }) => isActive ? "active" : ''}>
