@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import { AppContext } from '../../AppContext';
-
 import "./PostCard.css"
 
 const PostCard = ({props}) => {

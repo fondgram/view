@@ -1,6 +1,6 @@
 import React from 'react'
 import "./SideNav.css"
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ReportIcon from '@mui/icons-material/Report';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
@@ -9,7 +9,6 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StorageIcon from '@mui/icons-material/Storage';
-import { Link } from 'react-router-dom';
 
 const SideNav = () => {
 
@@ -18,46 +17,46 @@ const SideNav = () => {
             <Link to="/" style={{ textDecoration: 'none', color:'inherit' }}><h1>Fondgram</h1></Link>
             <ul>
                 <li>
-                    <NavLink to="/admin/dashboards" className={({ isActive }) => isActive ? "active" : ''}>
+                    <Link to="/admin/dashboards" className={({ isActive }) => isActive ? "active" : ''}>
                         <DashboardIcon sx={{ fontSize: "29px" }} />
                         Dashboard
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
-                    <NavLink to="/admin/users" className={({ isActive }) => isActive ? "active" : ''}>
+                    <Link to="/admin/users" className={({ isActive }) => isActive ? "active" : ''}>
                         <PersonOutlineIcon sx={{ fontSize: "29px" }} />
                         Users
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
-                    <NavLink to="/admin/analytics" className={({ isActive }) => isActive ? "active" : ''}>
+                    <Link to="/admin/analytics" className={({ isActive }) => isActive ? "active" : ''}>
                         <AnalyticsIcon sx={{ fontSize: "29px" }} />
                         Analytics
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
-                    <NavLink to="/admin/reports" className={({ isActive }) => isActive ? "active" : ''}>
+                    <Link to="/admin/reports" className={({ isActive }) => isActive ? "active" : ''}>
                         <ReportIcon sx={{ fontSize: "29px" }} />
                         Reports
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
-                    <NavLink to="/admin/messages" className={({ isActive }) => isActive ? "active" : ''}>
+                    <Link to="/admin/messages" className={({ isActive }) => isActive ? "active" : ''}>
                         <MailOutlineIcon sx={{ fontSize: "29px" }} />
                         Messages
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
-                    <NavLink to="/admin/settings" className={({ isActive }) => isActive ? "active" : ''}>
+                    <Link to="/admin/settings" className={({ isActive }) => isActive ? "active" : ''}>
                         <SettingsIcon sx={{ fontSize: "29px" }} />
                         Settings
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
-                    <NavLink to="/admin/dbentities" className={({ isActive }) => isActive ? "active" : ''}>
+                    <Link to="/admin/dbentities" className={({ isActive }) => isActive ? "active" : ''}>
                         <StorageIcon sx={{ fontSize: "29px" }} />
                         Db Entities
-                    </NavLink>
+                    </Link>
                 </li>
             </ul>
             <button type='button' className='log__out__button'>

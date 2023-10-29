@@ -9,20 +9,20 @@ import { showErrorToast, showInfoToast, showSuccessToast, showWarningToast } fro
 
 const Login = () => {
   const navigate = useNavigate();
-  const [userName, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const userNameRegex = /^[A-Za-z]+$/;
+    const usernameRegex = /^[A-Za-z]+$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.!?@#$%&]).{6,20}$/;
     const errors = [];
 
-    if (!userNameRegex.test(userName)) {
+    if (!usernameRegex.test(username.trim())) {
       errors.push("Please provide a valid username!");
     }
 
-    if (!passwordRegex.test(password)) {
+    if (!passwordRegex.test(password.trim())) {
       errors.push("Please provide a password with 6+ characters, including upper, lowercase, and special characters!");
     }
 
@@ -35,8 +35,8 @@ const Login = () => {
 
     try {
       const response = await axios.post(Variables.API_URL + "user/login", {
-        userName: userName,
-        password: password,
+        username: username.trim(),
+        password: password.trim(),
       });
 
       if (response.status === 200) {
@@ -85,7 +85,7 @@ const Login = () => {
               name="username"
               placeholder="Username"
               id="username"
-              value={userName}
+              value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />

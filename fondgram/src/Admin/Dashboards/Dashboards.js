@@ -2,14 +2,14 @@ import React from 'react'
 import SideNav from '../Components/SideNav/SideNav'
 import StatisticCard from '../Components/StatisticCard/StatisticCard'
 import RecentOrders from '../Components/RecentOrders/RecentOrders'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import "./Dashboards.css"
 import RecentUpdates from '../Components/RecentUpdates/RecentUpdates';
 import SimpleAnalytics from '../Components/SimpleAnalytics/SimpleAnalytics';
 const Dashboards = () => {
 
-  const StyledNavLink = styled(NavLink)`  
+  const StyledLink = styled(Link)`  
                         display: block;
                         width: 100%;
                         text-align: center;
@@ -32,7 +32,7 @@ const Dashboards = () => {
         <div>
           <p className='recent__orders__title'>Recent orders</p>
           <RecentOrders />
-          <StyledNavLink to="/">Show All</StyledNavLink>
+          <StyledLink to="/">Show All</StyledLink>
         </div>
       </div>
       <div>

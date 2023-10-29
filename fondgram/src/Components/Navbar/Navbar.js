@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import "./Navbar.css"
 import {
     Search,
@@ -12,34 +12,48 @@ import {
 } from '@mui/icons-material';
 import { AppContext } from '../../AppContext';
 import Dropdown from './Dropdown';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
+import axios from 'axios';
+import { Variables } from '../../Variables';
 
 
 
 const Navbar = () => {
-    const isAdmin = true;//Todo: make this dynamic
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [token, setToken] = useState("");
     const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false)
     const { lightMode, setLightMode } = useContext(AppContext);
     const [menu, setMenu] = useState(true);
 
+    useEffect(() => {
+        const jwtToken = sessionStorage.getItem("jwtToken");
+        if (jwtToken) {
+          setToken(jwtToken);
+          axios
+            .get(Variables.API_URL + "user/UserRole", {
+              headers: {
+                Authorization: `Bearer ${jwtToken}`,
+              },
+            })
+            .then((response) => {
+              if (response.data === "Admin") {
+                setIsAdmin(true);
+              }
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }
+      }, []);
+    
     const handleToggleDarkMode = () => {
         setLightMode(!lightMode)
     }
 
-    const handleAccountNavigation = () => {
-        if (!menu) {
-            document.querySelector(".my_account__menu").style.display = "flex";
-            setMenu(true);
-        } else {
-            document.querySelector(".my_account__menu").style.display = "none";
-            setMenu(false);
-        }
-    };
-
     return (
         <header>
-            {isAdmin && <NavLink to="/admin/analytics" style={{ textDecoration: 'none' }}><h3 className={(!lightMode ? " dark__mode" : "")}>Administration</h3></NavLink>}
+            {isAdmin && <Link to="/admin/analytics" style={{ textDecoration: 'none' }}><h3 className={(!lightMode ? " dark__mode" : "")}>Administration</h3></Link>}
             <nav className={(lightMode ? " light__mode" : "")}>
                 <div>
                     <h1 className='logo'>Fondgram</h1>
@@ -62,19 +76,19 @@ const Navbar = () => {
                         {lightMode && <DarkMode onClick={handleToggleDarkMode} sx={{ color: 'black', cursor: 'pointer' }} />}
                     </li>
                     <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
-                        <NavLink to="/admin/" >
+                        <Link to="/admin/" >
                             <Message sx={{ color: lightMode ? 'black' : 'white' }} />
-                        </NavLink>
+                        </Link>
                     </li>
                     <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
-                        <NavLink to="/admin/" >
+                        <Link to="/admin/" >
                             <Notifications sx={{ color: lightMode ? 'black' : 'white' }} />
-                        </NavLink>
+                        </Link>
                     </li>
                     <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
-                        <NavLink to="/about">
+                        <Link to="/about">
                             <Help sx={{ color: lightMode ? 'black' : 'white' }} />
-                        </NavLink>
+                        </Link>
                     </li>
                     <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
                         <Dropdown />

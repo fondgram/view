@@ -1,5 +1,5 @@
 .register__container {
-    background: linear-gradient(to right, #94d3ee, #aeb1b2, #a0f7a0);
+    background: linear-gradient(to bottom, #344, #ad9eb4, #aaf);
     min-height: 80vh;
 }
 
@@ -60,7 +60,7 @@
     color: white;
     font-size: 17px;
     font-weight: bold;
-    background-color: #57b846;
+    background-color: black;
 }
 
 .register .register__button:hover {

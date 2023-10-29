@@ -6,9 +6,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 16px;
+    padding: 10px 12px;
     background-color: #555;
-    border-radius: 10px;
+    border-radius: 7px;
     color: white;
     cursor: pointer;
 }
@@ -41,6 +41,7 @@
 
 .dropdown-container .dropdown-header-icon.open {
     transform: rotate(180deg);
+    transition: transform 0.3s;
 }
 
 .dropdown-container .dropdown-menu {

@@ -25,14 +25,14 @@
     font-size: 19px;
     border: none;
     border-radius: 30px;
-    background-color: #353535;
+    background-color: #222;
     color: white;
 }
 
 
 .add__post .upper__part .whats__on__your__mind.light__mode{
     background-color: #ddd;
-    color: #333;
+    color: #222;
 }
 
 .add__post input[type="file"]{

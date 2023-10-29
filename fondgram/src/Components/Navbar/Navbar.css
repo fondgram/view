@@ -15,7 +15,7 @@ header h3:hover {
 }
 
 header h3.dark__mode {
-    background-color: #333;
+    background-color: #222;
     color: white;
 }
 
@@ -27,7 +27,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0 5%;
-    height: 83px;
+    height: 70px;
     background-color: #171717;
     max-width: 100%;
 }
@@ -81,7 +81,7 @@ nav .search.light__mode {
 }
 
 nav .search.light__mode:focus::placeholder {
-    color: #333;
+    color: #222;
 }
 
 nav .search__button {

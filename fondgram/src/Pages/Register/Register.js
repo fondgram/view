@@ -11,10 +11,9 @@ const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [confirmEmail, setConfirmEmail] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [address, setAddress] = useState("");
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleRegister = async (event) => {
@@ -22,25 +21,21 @@ const Register = () => {
 
     const firstNameRegex = /^[A-Za-z]{2,30}$/;
     const lastNameRegex = /^[A-Za-z]{2,30}$/;
-    const emailRegex = /^[A-Za-z0-9_]+@[a-zA-Z-]+\.(com|net|edu)$/;
+    const emailRegex = /^[A-Za-z0-9._]+@[a-zA-Z-]+\.(com|net|edu)$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.!?@#$%&]).{6,20}$/;
 
     const errors = [];
 
-    if (!firstNameRegex.test(firstName)) {
+    if (!firstNameRegex.test(firstName.trim())) {
       errors.push("Please provide a valid first name!");
     }
 
-    if (!lastNameRegex.test(lastName)) {
+    if (!lastNameRegex.test(lastName.trim())) {
       errors.push("Please provide a valid last name!");
     }
 
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(email.trim())) {
       errors.push("Please provide a valid email!");
-    }
-
-    if (email !== confirmEmail) {
-      errors.push("Email doesn't match with confirm email!");
     }
 
     if (!passwordRegex.test(password.trim())) {
@@ -56,13 +51,13 @@ const Register = () => {
 
     try {
       const response = await axios.post(Variables.API_URL + "user/register", {
-        firstName: firstName,
-        lastName: lastName,
-        birthday: birthDate,
-        address: address,
-        email: email,
-        userName: userName,
-        password: password,
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        birthday: birthDate.trim(),
+        address: address.trim(),
+        email: email.trim(),
+        username: username.trim(),
+        password: password.trim(),
       });
       if (response.status === 200) {
         const token = response.data.token;
@@ -126,29 +121,29 @@ const Register = () => {
             />
             <input
               type="date"
+              title = "Optional"
               name="birthDate"
               id="birthDate"
               placeholder="Birthday"
               value={birthDate}
               onChange={(e) => setBirthDate(e.target.value)}
-              required
             />
             <input
               type="text"
+              title = "Optional"
               name="address"
               id="address"
               placeholder="Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              required
             />
             <input
               type="username"
               name="username"
-              placeholder="UserName"
+              placeholder="Username"
               id="username"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
             <input
@@ -158,15 +153,6 @@ const Register = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              type="email"
-              name="confirmEmail"
-              placeholder="Confirm Email"
-              id="confirmEmail"
-              value={confirmEmail}
-              onChange={(e) => setConfirmEmail(e.target.value)}
               required
             />
             <input

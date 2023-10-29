@@ -1,6 +1,6 @@
 .post__card {
     width: 550px;
-    background-color: #333;
+    background-color: #222;
     margin: 15px;
     padding: 12px;
     border-radius: 10px;
@@ -9,8 +9,6 @@
 .post__card.light__mode {
     background-color: white;
 }
-
-
 
 .post__card .upper__part {
     display: grid;
@@ -44,6 +42,7 @@
 .post__card .upper__part .location.light__mode {
     color: #777;
 }
+
 .post__card .bottom__part .post__image {
     width: 100%;
     min-width: 300px;
@@ -97,7 +96,7 @@
     background-color: #888;
 }
 
-@media screen and (max-width: 1020px){
+@media screen and (max-width: 1020px) {
     .post__card {
         width: 95%;
         min-width: 300px;
@@ -105,6 +104,7 @@
 
     }
 }
+
 @media screen and (max-width:678px) {
     .post__card {
         margin: 5px;

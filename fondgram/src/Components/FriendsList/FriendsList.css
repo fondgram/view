@@ -1,6 +1,6 @@
 .friends__list {
     width: 320px;
-    background-color: #353535;
+    background-color: #222;
     border-radius: 15px;
     padding: 12px;
     color: white;
@@ -10,7 +10,7 @@
 
 .friends__list.light__mode{
     background-color: white;
-    color: #353535;
+    color: #222;
 }
 
 .friends__list .title {
