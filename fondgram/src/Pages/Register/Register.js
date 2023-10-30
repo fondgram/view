@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Register.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Variables } from "../../Variables";
 import axios from "axios";
 import { showErrorToast, showSuccessToast, showWarningToast } from "../../NotificationUtils";
@@ -61,12 +61,12 @@ const Register = () => {
       });
       if (response.status === 200) {
         const token = response.data.token;
-        sessionStorage.setItem("jwtToken", token);
+        localStorage.setItem("jwtToken", token);
         navigate("/");
         var userInfo = await getUserInfo();
-        sessionStorage.setItem("usersName", userInfo.firstName);
-        sessionStorage.setItem("usersLastName", userInfo.lastName);
-        sessionStorage.setItem("usersEmail", userInfo.email);
+        localStorage.setItem("usersName", userInfo.firstName);
+        localStorage.setItem("usersLastName", userInfo.lastName);
+        localStorage.setItem("usersEmail", userInfo.email);
         showSuccessToast("You're registered successfully!")
       }
     } catch (error) {
@@ -81,7 +81,7 @@ const Register = () => {
     try {
       const userInfo = await axios.get(Variables.API_URL + "user/UserInfo", {
         headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("jwtToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
         },
       });
       return userInfo.data;
@@ -95,7 +95,9 @@ const Register = () => {
 
   return (
     <div className="register__container">
-      <h1 className="website">Fondgram</h1>
+      <Link to="/"
+        style={{ textDecoration: "none", color: "inherit" }}
+      ><h1 className="website">Fondgram</h1></Link>
       <div className="register__page">
         <div className="register">
           <img src={require("./assets/login.jpg")} alt="login" />
@@ -121,7 +123,7 @@ const Register = () => {
             />
             <input
               type="date"
-              title = "Optional"
+              title="Optional"
               name="birthDate"
               id="birthDate"
               placeholder="Birthday"
@@ -130,7 +132,7 @@ const Register = () => {
             />
             <input
               type="text"
-              title = "Optional"
+              title="Optional"
               name="address"
               id="address"
               placeholder="Address"

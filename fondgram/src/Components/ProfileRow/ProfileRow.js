@@ -22,7 +22,7 @@ const ProfileRow = ({ props }) => {
     try {
       const response = await axios.post(Variables.API_URL + `user/FollowUser?userToFollowId=${userId}`, null, {
         headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("jwtToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
         },
       });
 
@@ -45,7 +45,10 @@ const ProfileRow = ({ props }) => {
         <p className={'full__name' + (lightMode ? " light__mode" : "")}>{props.user.firstName + " " + props.user.lastName}</p>
         <p className='nr__friends'>{props.followersCount} followers</p>
       </div>
-      <PersonAddIcon onClick={() => handleAddFriend(props.user.id)} sx={{ marginTop: '10px', backgroundColor: '#00b5cA', borderRadius: '50%', padding: "5px", cursor: 'pointer' }} />
+      {!props.following ? 
+      (
+        <PersonAddIcon onClick={() => handleAddFriend(props.user.id)} sx={{ marginTop: '10px', backgroundColor: '#00b5cA', borderRadius: '50%', padding: "5px", cursor: 'pointer' }} />
+      ) : (<p>Following</p>)}
     </div>
   )
 }

@@ -107,10 +107,9 @@
 
 @media screen and (max-width:678px) {
     .post__card {
-        margin: 5px;
-        width: 90%;
-        min-width: 300px;
+        margin: 5px 0;
+        width: 95%;
+        min-width: 290px;
         text-align: left;
     }
-
 }

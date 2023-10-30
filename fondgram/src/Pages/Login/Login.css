@@ -1,6 +1,6 @@
 .login__container {
     background: linear-gradient(to bottom, #344, #ad9eb4, #aaf);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .login__container .website {
@@ -16,7 +16,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 80vh
+    height: 77vh;
 }
 
 
@@ -73,18 +73,36 @@
 }
 
 @media screen and (max-width: 678px) {
+    .login__container .website {
+        font-size: 32px;
+        padding: 5px;
+    }
+
+    .login__container .login__page {
+        padding: 0;
+    }
+
     .login {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
     }
 
     .login img {
-        width: 400px;
-        margin: auto;
+        width: 310px;
+        height: 280px;
+        margin: 5px auto;
     }
 
-    .login body {
-        text-align: center;
+    .login form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
+    .login form input {
+        margin: 4px;
     }
 }

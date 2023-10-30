@@ -10,11 +10,14 @@ const FriendsList = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
+    if (!localStorage.getItem("jwtToken")){
+      return;
+    }
     const getPosts = async () => {
       try {
-        const response = await axios.get(Variables.API_URL + 'user/RecommendedFriends?page=1&pageSize=5', {
+        const response = await axios.get(Variables.API_URL + 'user/RecommendedFriends?page=1&pageSize=10', {
           headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("jwtToken")}`,
+            Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
           },
         });
         if (response.status === 200) {

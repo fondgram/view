@@ -14,7 +14,7 @@ const Dropdown = () => {
   };
 
   const logout = () => {
-    sessionStorage.clear()
+    localStorage.clear()
     showSuccessToast("You're logged out successfully!");
     setTimeout(() => {
       window.location.reload();
@@ -25,9 +25,9 @@ const Dropdown = () => {
     <div className="dropdown-container">
       <div className="dropdown-header" onClick={toggleDropdown}>
         {
-          sessionStorage.getItem("usersName") != null ? (
+          localStorage.getItem("usersName") != null ? (
             <div className="dropdown-header-title">
-              <span>{`${sessionStorage.getItem("usersName") != null ? sessionStorage.getItem("usersName") : ""} ${sessionStorage.getItem("usersLastName") != null && window.innerWidth > 810 ? sessionStorage.getItem("usersLastName") : ""}`}</span>
+              <span>{`${localStorage.getItem("usersName") != null ? localStorage.getItem("usersName") : ""} ${localStorage.getItem("usersLastName") != null && window.innerWidth > 810 ? localStorage.getItem("usersLastName") : ""}`}</span>
               <span className={`dropdown-header-icon ${isOpen ? "open" : ""}`}></span>
             </div>
           ) :
@@ -36,7 +36,7 @@ const Dropdown = () => {
             </div>
         }
       </div>
-      {sessionStorage.getItem("usersName") != null && isOpen && (
+      {localStorage.getItem("usersName") != null && isOpen && (
         <ul className="dropdown-menu">
           <li className="dropdown-item" onClick={handleItemClick}>
             <Link

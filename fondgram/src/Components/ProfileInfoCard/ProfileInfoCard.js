@@ -20,7 +20,7 @@ const ProfileInfoCard = () => {
       <div className='upper__part'>
         <img className='profile__image' src={require("./assets/profileSample.jpg")} alt='profile__image' />
         <div className='info'>
-          <p className={'full__name' + (lightMode ? " light__mode" : "")}>Trim Kusari</p>
+          <p className={'full__name' + (lightMode ? " light__mode" : "")}>Blendion Krasniqi</p>
           <p className='nr__friends'>3 friends</p>
         </div>
         <Diversity3Icon sx={{ marginTop: '20px' }} />

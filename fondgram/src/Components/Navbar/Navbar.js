@@ -17,8 +17,6 @@ import { IconButton } from '@mui/material';
 import axios from 'axios';
 import { Variables } from '../../Variables';
 
-
-
 const Navbar = () => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [token, setToken] = useState("");
@@ -27,29 +25,25 @@ const Navbar = () => {
     const [menu, setMenu] = useState(true);
 
     useEffect(() => {
-        const jwtToken = sessionStorage.getItem("jwtToken");
+        const jwtToken = localStorage.getItem("jwtToken");
         if (jwtToken) {
-          setToken(jwtToken);
-          axios
-            .get(Variables.API_URL + "user/UserRole", {
-              headers: {
-                Authorization: `Bearer ${jwtToken}`,
-              },
-            })
-            .then((response) => {
-              if (response.data === "Admin") {
-                setIsAdmin(true);
-              }
-            })
-            .catch((error) => {
-              console.error(error);
-            });
+            setToken(jwtToken);
+            axios
+                .get(Variables.API_URL + "user/UserRole", {
+                    headers: {
+                        Authorization: `Bearer ${jwtToken}`,
+                    },
+                })
+                .then((response) => {
+                    if (response.data === "Admin") {
+                        setIsAdmin(true);
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
         }
-      }, []);
-    
-    const handleToggleDarkMode = () => {
-        setLightMode(!lightMode)
-    }
+    }, []);
 
     return (
         <header>
@@ -62,32 +56,45 @@ const Navbar = () => {
                         <Search sx={{ color: lightMode ? 'black' : '' }} />
                     </button>
                 </div>
-                <ul className={"navbar__links" + (isMobileMenuToggled ? " small__screen" : "") + (lightMode ? " light__mode" : "")}>
+                <ul onClick={isMobileMenuToggled ? () => setIsMobileMenuToggled(!isMobileMenuToggled) : null} className={"navbar__links" + (isMobileMenuToggled ? " small__screen" : "") + (lightMode ? " light__mode" : "")}>
                     {isMobileMenuToggled && <Close onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)} sx={{
                         color: lightMode ? 'black' : 'white',
                         position: 'absolute',
-                        top: '20px',
+                        top: '18px',
                         fontSize: '32px',
                         right: '20px',
                         cursor: 'pointer',
                     }} />}
-                    <li>
-                        {!lightMode && <LightMode onClick={handleToggleDarkMode} sx={{ cursor: 'pointer' }} title="set dark mode" />}
-                        {lightMode && <DarkMode onClick={handleToggleDarkMode} sx={{ color: 'black', cursor: 'pointer' }} />}
+                    <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
+                        <div sx={{ display: 'flex', alignItems: 'center' }}>
+                            {!lightMode ? (<LightMode onClick={() => setLightMode(!lightMode)} sx={{ cursor: 'pointer' }} title="set dark mode" />
+                            ) : (lightMode && <DarkMode onClick={() => setLightMode(!lightMode)} sx={{ color: 'black', cursor: 'pointer' }} />)}
+                            {isMobileMenuToggled && <p className='link__text' style={{ color: lightMode ? 'black' : 'white' }}>Set {lightMode ? 'dark' : 'light'} mode</p>}
+
+                        </div>
                     </li>
                     <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
-                        <Link to="/admin/" >
-                            <Message sx={{ color: lightMode ? 'black' : 'white' }} />
+                        <Link to="/admin/" style={{ textDecoration: 'none' }}>
+                            <div sx={{ display: 'flex', alignItems: 'center' }}>
+                                <Message sx={{ color: lightMode ? 'black' : 'white' }} />
+                                {isMobileMenuToggled && <p className='link__text' style={{ color: lightMode ? 'black' : 'white' }}>Messages</p>}
+                            </div>
                         </Link>
                     </li>
                     <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
-                        <Link to="/admin/" >
-                            <Notifications sx={{ color: lightMode ? 'black' : 'white' }} />
+                        <Link to="/admin/" style={{ textDecoration: 'none' }}>
+                            <div sx={{ display: 'flex', alignItems: 'center' }}>
+                                <Notifications sx={{ color: lightMode ? 'black' : 'white' }} />
+                                {isMobileMenuToggled && <p className='link__text' style={{ color: lightMode ? 'black' : 'white' }}>Notifications</p>}
+                            </div>
                         </Link>
                     </li>
                     <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
-                        <Link to="/about">
-                            <Help sx={{ color: lightMode ? 'black' : 'white' }} />
+                        <Link to="/about/" style={{ textDecoration: 'none' }}>
+                            <div sx={{ display: 'flex', alignItems: 'center' }}>
+                                <Help sx={{ color: lightMode ? 'black' : 'white' }} />
+                                {isMobileMenuToggled && <p className='link__text' style={{ color: lightMode ? 'black' : 'white' }}>About</p>}
+                            </div>
                         </Link>
                     </li>
                     <li className={(isMobileMenuToggled ? " small__screen " : " hide__on__small__screen")}>
@@ -100,7 +107,7 @@ const Navbar = () => {
                             display: { xs: 'block', sm: 'block', md: 'none' },
                             color: lightMode ? 'black' : 'white',
                             position: 'absolute',
-                            top: '20px',
+                            top: '15px',
                             fontSize: '28px',
                             right: '0',
                         }} />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Login.css";
 import { Variables } from "../../Variables";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { showErrorToast, showInfoToast, showSuccessToast, showWarningToast } from "../../NotificationUtils";
 
 
@@ -41,12 +41,12 @@ const Login = () => {
 
       if (response.status === 200) {
         const token = response.data.token;
-        sessionStorage.setItem("jwtToken", token);
+        localStorage.setItem("jwtToken", token);
         navigate("/");
         var userInfo = await getUserInfo();
-        sessionStorage.setItem("usersName", userInfo.firstName)
-        sessionStorage.setItem("usersLastName", userInfo.lastName)
-        sessionStorage.setItem("usersEmail", userInfo.email)
+        localStorage.setItem("usersName", userInfo.firstName)
+        localStorage.setItem("usersLastName", userInfo.lastName)
+        localStorage.setItem("usersEmail", userInfo.email)
         showSuccessToast("You're logged in successfully!")
       }
     } catch (error) {
@@ -61,7 +61,7 @@ const Login = () => {
     try {
       const userInfo = await axios.get(Variables.API_URL + "user/UserInfo", {
         headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("jwtToken")}`,
+          Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
         },
       })
       return userInfo.data;
@@ -74,7 +74,9 @@ const Login = () => {
   }
   return (
     <div className="login__container">
-      <h1 className="website">Fondgram</h1>
+      <Link to="/"
+        style={{ textDecoration: "none", color: "inherit" }}
+      ><h1 className="website">Fondgram</h1></Link>
       <div className="login__page">
         <div className="login">
           <img src={require("./assets/login.jpg")} alt="login" />

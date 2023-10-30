@@ -29,6 +29,7 @@ nav {
     padding: 0 5%;
     height: 70px;
     background-color: #171717;
+    position: relative;
     max-width: 100%;
 }
 
@@ -104,11 +105,22 @@ nav .navbar__links {
     color: white;
     align-items: center;
 }
-
 nav .navbar__links li {
-    padding: 11px 20px;
+    padding: 0 20px;
 }
 
+nav .navbar__links li.small__screen {
+    padding: 11px 20px;
+    display: flex;
+    align-items: center;    
+    min-width: 140px;
+}
+
+nav .navbar__links .link__text {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px 5px;   
+}
 
 .my_account {
     position: relative;
@@ -159,7 +171,7 @@ li::marker {
     }
 
 }
-/* 
+
 @media screen and (max-width: 678px) {
     nav .logo {
         font-size: 24px;
@@ -176,9 +188,7 @@ li::marker {
     nav .search__button {
         display: none;
     }
-
-
-} */
+}
 
 /* Colors: 
 E6FBFF: white

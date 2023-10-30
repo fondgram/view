@@ -3,9 +3,12 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import { AppContext } from '../../AppContext';
+import { useNavigate } from "react-router-dom";
 import "./PostCard.css"
 
-const PostCard = ({props}) => {
+const PostCard = ({ props }) => {
+  const navigate = useNavigate();
+
   const { lightMode, setLightMode } = useContext(AppContext);
   const handleAddLike = () => {
     console.log("like added")
@@ -17,11 +20,11 @@ const PostCard = ({props}) => {
     console.log('asdfsd')
   }
   return (
-    <div className={'post__card '  + (lightMode ? " light__mode" : "")}>
+    <div className={'post__card ' + (lightMode ? " light__mode" : "")}>
       <div className='upper__part'>
         <img className='profile__image' src={require("./assets/profileSample.jpg")} alt='profile__image' />
         <div className='info'>
-          <p className={'full__name' + (lightMode ? " light__mode" : "")}>Trim Kusari</p>
+          <p className={'full__name' + (lightMode ? " light__mode" : "")}>Blendion Krasniqi</p>
           <p className={'location' + (lightMode ? " light__mode" : "")}>Place</p>
         </div>
         <PersonAddIcon onClick={handleAddFriend} sx={{ marginTop: '10px', backgroundColor: '#33DDFB', borderRadius: '50%', padding: "5px", cursor: 'pointer' }} />
