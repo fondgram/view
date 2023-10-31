@@ -42,6 +42,7 @@ const Login = () => {
       if (response.status === 200) {
         const token = response.data.token;
         localStorage.setItem("jwtToken", token);
+        localStorage.setItem('tokenExpiration', Date.now() + 18000 * 1000); // 5 hours
         navigate("/");
         var userInfo = await getUserInfo();
         localStorage.setItem("usersName", userInfo.firstName)
@@ -58,6 +59,9 @@ const Login = () => {
   };
 
   const getUserInfo = async () => {
+    if (!localStorage.getItem("jwtToken")){
+      return;
+    }
     try {
       const userInfo = await axios.get(Variables.API_URL + "user/UserInfo", {
         headers: {

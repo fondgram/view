@@ -10,10 +10,10 @@ const FriendsList = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    if (!localStorage.getItem("jwtToken")){
-      return;
-    }
     const getPosts = async () => {
+      if (!localStorage.getItem("jwtToken")) {
+        return;
+      }
       try {
         const response = await axios.get(Variables.API_URL + 'user/RecommendedFriends?page=1&pageSize=10', {
           headers: {

@@ -25,6 +25,9 @@ const Navbar = () => {
     const [menu, setMenu] = useState(true);
 
     useEffect(() => {
+        if (localStorage.getItem('tokenExpiration') < Date.now()) {
+            localStorage.clear()
+        }
         const jwtToken = localStorage.getItem("jwtToken");
         if (jwtToken) {
             setToken(jwtToken);

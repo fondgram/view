@@ -15,7 +15,6 @@ const ProfileRow = ({ props }) => {
     } else {
       setProfileImageUrl(props.user.profileImageUrl);
     }
-    console.log(props.user)
   }, [props.user.profileImageUrl]);
 
   const handleAddFriend = async (userId) => {
